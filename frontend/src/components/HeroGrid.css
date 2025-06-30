@@ -1,0 +1,36 @@
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+  padding: 16px;
+}
+
+.hero-card {
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 6px;
+  transition: transform 0.2s;
+}
+
+.hero-card:hover {
+  transform: scale(1.05);
+  background-color: #292929;
+}
+
+.hero-img {
+  width: 80px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.hero-name {
+  margin-top: 6px;
+  color: #fff;
+}
+
+
+ 
