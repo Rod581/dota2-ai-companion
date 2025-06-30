@@ -44,7 +44,7 @@ const DragDraftPicker = () => {
     const teamIds = [userPick.id, ...allies.map(h => h.id)];
     const enemyIds = enemies.map(h => h.id);
 
-    fetch(`https://dota2-ai-backend.onrender.com/buildsuggestion?yourHero=${userPick.id}&team=${teamIds.join(',')}&enemies=${enemyIds.join(',')}`)
+    fetch(`https://dota2-backend-suggestion.onrender.com/buildsuggestion?yourHero=${userPick.id}&team=${teamIds.join(',')}&enemies=${enemyIds.join(',')}`)
       .then(res => res.json())
       .then(data => setBuild(data));
   };
