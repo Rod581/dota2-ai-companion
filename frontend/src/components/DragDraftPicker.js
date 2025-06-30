@@ -15,6 +15,17 @@ const DragDraftPicker = () => {
       .then(data => setHeroes(data));
   }, []);
 
+  const itemNameMap = {
+    "Aghanim's Scepter": "aghanims_scepter",
+    "Magic Wand": "magic_wand",
+    "Arcane Boots": "arcane_boots",
+    "Force Staff": "force_staff",
+    "Glimmer Cape": "glimmer_cape",
+    "Scythe of Vyse": "sheepstick",
+    "Tango": "tango",
+    "Iron Branch": "branches"
+  };
+
   const selectHero = (hero) => {
     const all = [userPick?.id, ...allies.map(h => h.id), ...enemies.map(h => h.id)];
     if (all.includes(hero.id)) return;
@@ -60,12 +71,15 @@ const DragDraftPicker = () => {
     <div className="item-row">
       <strong>{label}:</strong>
       <div className="item-icons">
-        {items && items.map(item => (
-          <div key={item} className="item-icon" title={item}>
-            <img src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/${item.toLowerCase().replace(/ /g, '_')}_lg.png`} alt={item} />
-            <span>{item}</span>
-          </div>
-        ))}
+        {items && items.map(item => {
+          const itemKey = itemNameMap[item] || item.toLowerCase().replace(/[' ]/g, '_');
+          return (
+            <div key={item} className="item-icon" title={item}>
+              <img src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/${itemKey}_lg.png`} alt={item} />
+              <span>{item}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
