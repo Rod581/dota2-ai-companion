@@ -56,6 +56,20 @@ const DragDraftPicker = () => {
     </div>
   );
 
+  const renderItems = (label, items) => (
+    <div className="item-row">
+      <strong>{label}:</strong>
+      <div className="item-icons">
+        {items && items.map(item => (
+          <div key={item} className="item-icon" title={item}>
+            <img src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/${item.toLowerCase().replace(/ /g, '_')}_lg.png`} alt={item} />
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     <div>
       <div className="draft-zone">
@@ -85,10 +99,10 @@ const DragDraftPicker = () => {
       {build && (
         <div className="build-section">
           <h3>Build Suggestion for {userPick.localized_name}</h3>
-          <p><strong>Starting:</strong> {build.starting_items?.join(', ')}</p>
-          <p><strong>Early:</strong> {build.early_items?.join(', ')}</p>
-          <p><strong>Mid:</strong> {build.mid_items?.join(', ')}</p>
-          <p><strong>Lategame:</strong> {build.late_items?.join(', ')}</p>
+          {renderItems("Starting", build.starting_items)}
+          {renderItems("Early", build.early_items)}
+          {renderItems("Mid", build.mid_items)}
+          {renderItems("Late", build.late_items)}
         </div>
       )}
     </div>
