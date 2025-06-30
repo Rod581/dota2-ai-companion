@@ -1,48 +1,50 @@
 
-.draft-zones {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.draft-slot {
-  background-color: #1a1a1a;
-  border: 2px dashed #555;
-  padding: 10px;
-  width: 300px;
-  min-height: 120px;
-  border-radius: 10px;
-  margin: 10px;
-  text-align: center;
-  color: white;
-}
-
-.user-slot { border-color: #3399ff; }
-.ally-slot { border-color: #33cc33; }
-.enemy-slot { border-color: #cc3333; }
-
 .hero-pool {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  padding: 10px;
-  border-top: 2px solid #333;
-  margin-top: 10px;
+  gap: 6px;
+  margin: 10px;
 }
 
 .hero-card {
   width: 90px;
-  background: #2a2a2a;
-  padding: 5px;
-  border-radius: 5px;
   text-align: center;
-  color: #fff;
   font-size: 12px;
+  color: white;
+  background: #222;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
 }
 
 .hero-card img {
   width: 80px;
-  height: auto;
   border-radius: 4px;
+}
+
+.draft-zone {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.draft-section {
+  flex: 1;
+  padding: 10px;
+  border: 1px dashed #555;
+  margin: 5px;
+  min-height: 100px;
+}
+
+.draft-actions {
+  text-align: center;
+  margin: 20px;
+}
+
+.build-section {
+  background-color: #1a1a1a;
+  padding: 15px;
+  margin: 10px;
+  color: white;
+  border-radius: 6px;
 }
